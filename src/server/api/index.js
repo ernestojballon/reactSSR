@@ -1,5 +1,5 @@
 import * as express from 'express';
-import bodyParser from "body-parser";
+import bodyParser from 'body-parser';
 import getContests from './routes/contests.js';
 
 const getApi = () => {

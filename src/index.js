@@ -1,8 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './client/App';
+import ContestService from './client/services/http/Contests.service'
 
-ReactDOM.hydrate(
-   <App/>,
-  document.getElementById('mountNode'),
-);
+
+const contestService = new ContestService()
+contestService.getAll().then(
+    (data)=>{
+      ReactDOM.hydrate(
+        <App initialData={data.contests}/>,
+       document.getElementById('mountNode'),
+     );
+    }
+  ).catch()
+
+
+
+

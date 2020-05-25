@@ -3,7 +3,7 @@ module.exports = {
   "env": {
     "browser": true,
     "commonjs": true,
-    "es8": true,
+    "es6": true,
     "node": true
   },
   "extends": ["eslint:recommended", "plugin:react/recommended"],
@@ -21,8 +21,6 @@ module.exports = {
     "linebreak-style": ["error","unix"],
     "quotes": ["warn","single"],
     "no-console": ["warn", { "allow": ["info", "error"] }],
-    "react/jsx-fragments" : ["off"],
     "no-nested-ternary": "warn",
-    'react/jsx-fragments':["off"],
   }
 };
