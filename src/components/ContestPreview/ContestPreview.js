@@ -1,5 +1,6 @@
 import React from 'react'
 import proptypes from 'prop-types'
+import './ContestPreview.scss'
 
 const ContestPreview = ({contest}) => {
   return (
