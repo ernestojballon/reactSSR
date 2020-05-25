@@ -29,4 +29,4 @@ server.get('/', (req, res) => {
 });
 server.use('/api',getApi())
 
-server.listen(getConfig().port, () => console.log('Server is running...'));
+server.listen(getConfig(), () => console.log('Server is running...'));
