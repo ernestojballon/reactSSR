@@ -1,8 +1,10 @@
 import express from 'express';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import App from '../components/App';
+import getConfig from '../../config'
+import App from '../client/App';
 import getApi from './api';
+
 
 const server = express();
 server.use(express.static('public'));
@@ -27,4 +29,4 @@ server.get('/', (req, res) => {
 });
 server.use('/api',getApi())
 
-server.listen(4242, () => console.log('Server is running...'));
+server.listen(getConfig().port, () => console.log('Server is running...'));

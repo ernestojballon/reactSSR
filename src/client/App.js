@@ -1,14 +1,14 @@
 import React , {useState,useEffect} from 'react';
-import Header from './Header/Header'
-import ContestPreview from './ContestPreview/ContestPreview';
-import data from '../data/testData.js'
+import Header from './components/Header/Header'
+import ContestPreview from './components/ContestPreview/ContestPreview';
 import './App.scss'
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [contests, setContest] = useState([]);
   useEffect(()=>{
+  
   },[])
-  const contests = data.contests.map((contest)=>{
+  const _contests = contests.map((contest)=>{
     return  <li key={contest.id}>
                   <ContestPreview contest={contest}/>
                   <br/>
@@ -19,10 +19,9 @@ const App = () => {
       <Header/>
       <br/>
       <ol>
-        {contests}
+        {_contests}
       </ol>
       <br/>
-      <button onClick={() => setCount(count + 1)}>{count}</button>
     </div>
   );
 }
