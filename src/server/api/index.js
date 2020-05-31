@@ -1,6 +1,7 @@
 import * as express from 'express';
 import bodyParser from 'body-parser';
-import getContests from './routes/contests.js';
+import getContestsRoute from './routes/contests.route.js';
+import getUsersRoute from './routes/users.route.js'
 
 const getApi = () => {
 
@@ -9,7 +10,8 @@ const getApi = () => {
   router.use(bodyParser.json());
 
   //contests router
-  router.use('/contests',getContests());
+  router.use('/contests',getContestsRoute);
+  router.use('/users',getUsersRoute);
   return router
 }
 

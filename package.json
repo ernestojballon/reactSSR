@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
+    "start": "concurrently -n 'webpack-server,node-server' -c 'bgBlue.bold,bgGreen.bold' 'npm run bundle-dev' 'npm run start-dev'",
     "start-dev": "nodemon --exec babel-node src/server/server.js --ignore dist/",
     "bundle-dev": "webpack -w -d"
   },
@@ -30,6 +31,7 @@
     "babel-eslint": "^7.0.0",
     "babel-loader": "^8.1.0",
     "babel-preset-stage-2": "^6.17.0",
+    "concurrently": "^5.2.0",
     "eslint": "^3.7.1",
     "eslint-plugin-react": "^6.4.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",

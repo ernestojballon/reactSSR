@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import axios from 'axios';
-import getClientConfig from '../../clientConfig'
+import getClientConfig from '../../config'
 
 export class BaseService {
   constructor(route) {
@@ -39,7 +39,6 @@ export class BaseService {
                 });
   }
   update = (id,user)=>{
-    console.log('inside the service update url::',`${this.url}/${id}`,user)
     return axios.patch(`${this.url}/${id}`,user, {headers: this.getHeaders()})
                 .then(resp => {
                   return resp;
@@ -48,8 +47,6 @@ export class BaseService {
                 });
   }
   delete= (id)=>{
-    console.log('inside delete:::',`${this.url}/${id}`);
-    
     return axios.delete(`${this.url}/${id}`, {headers: this.getHeaders()})
                 .then(resp => {
                   return resp;
